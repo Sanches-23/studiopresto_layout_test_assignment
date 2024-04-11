@@ -1,0 +1,17 @@
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/func';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $primary-bs-sand;
+}
+
+.wrapper {
+  max-width: $wrap;
+  margin: 0 auto;
+  padding: 0;
+}

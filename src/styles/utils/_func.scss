@@ -1,0 +1,28 @@
+@function font-map($weight, $style: normal) {
+  $font-family: 'Poppins', sans-serif;
+  @return (
+    'font-family': $font-family,
+    'font-weight': $weight,
+    'font-style': $style
+  );
+}
+
+$poppins-thin: font-map(100);
+$poppins-extralight: font-map(200);
+$poppins-light: font-map(300);
+$poppins-regular: font-map(400);
+$poppins-medium: font-map(500);
+$poppins-semibold: font-map(600);
+$poppins-bold: font-map(700);
+$poppins-extrabold: font-map(800);
+$poppins-black: font-map(900);
+
+$poppins-thin-italic: font-map(100, italic);
+$poppins-extralight-italic: font-map(200, italic);
+$poppins-light-italic: font-map(300, italic);
+$poppins-regular-italic: font-map(400, italic);
+$poppins-medium-italic: font-map(500, italic);
+$poppins-semibold-italic: font-map(600, italic);
+$poppins-bold-italic: font-map(700, italic);
+$poppins-extrabold-italic: font-map(800, italic);
+$poppins-black-italic: font-map(900, italic);

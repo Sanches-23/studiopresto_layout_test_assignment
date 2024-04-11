@@ -1,0 +1,110 @@
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/func';
+
+.footer {
+  &-content {
+    padding: 80px 64px 24px;
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      padding: 80px 24px 24px;
+    }
+
+    &__panel {
+      display: flex;
+      flex-direction: column;
+      max-width: 976px;
+      gap: 40px;
+      padding-bottom: 104px;
+      @include onTablet {
+        padding-bottom: 64px;
+      }
+    }
+
+    &__title {
+      @include apply-font-styles($poppins-semibold);
+      font-size: 72px;
+      color: $primary-bs-dark-green;
+      line-height: 1.1;
+
+      &-part {
+        @include apply-font-styles($poppins-regular-italic);
+      }
+
+      @include onLaptop {
+        font-size: 40px;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 16px;
+      @include onTablet {
+        flex-direction: column;
+      }
+    }
+
+    &__btn-nonborder {
+      @include button-constructor(
+        16px,
+        $primary-bs-light-green,
+        none,
+        $primary-bs-dark-green,
+        $primary-bs-dark-green,
+        $primary-bs-sand
+      );
+      @include apply-font-styles($poppins-medium);
+      width: 256px;
+      height: 54px;
+      @include onLaptop {
+        width: 100%;
+      }
+    }
+
+    &__btn-border {
+      @include button-constructor(
+        16px,
+        transparent,
+        1px solid $primary-bs-dark-green,
+        $primary-bs-dark-green,
+        $primary-bs-dark-green,
+        $primary-bs-sand
+      );
+      @include apply-font-styles($poppins-medium);
+      width: 369px;
+      height: 54px;
+      @include onLaptop {
+        width: 100%;
+      }
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      @include onLaptop {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      gap: 24px;
+      @include onLaptop {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+      }
+    }
+
+    &__item {
+      @include apply-font-styles($poppins-regular);
+      font-size: 14px;
+      color: $primary-green-700;
+      @include onLaptop {
+        font-size: 12px;
+      }
+    }
+  }
+}

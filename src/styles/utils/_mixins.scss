@@ -1,6 +1,38 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin button-constructor(
+  $font-size,
+  $background-color,
+  $border,
+  $color,
+  $h-background-color: transparent,
+  $h-color: transparent
+) {
+  font-size: $font-size;
+  background-color: $background-color;
+  border: $border;
+  color: $color;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: $h-background-color;
+    color: $h-color;
   }
+}
+
+@mixin onTablet {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin apply-font-styles($font-map) {
+  font-family: map-get($font-map, 'font-family');
+  font-weight: map-get($font-map, 'font-weight');
+  font-style: map-get($font-map, 'font-style');
 }

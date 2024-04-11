@@ -1,0 +1,391 @@
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/func';
+
+.home {
+  background-color: $primary-bs-dark-green;
+  //&__bg-logo{
+  //  &-second{
+  //    position: fixed;
+  //    top: 742px;
+  //    left: 999px;
+  //    z-index: 1;
+  //  }
+  //}
+
+  &-hero-section {
+    padding: 64px 32px;
+    @include onTablet {
+      padding: 32px 24px 64px 24px;
+    }
+
+    &__container {
+      display: flex;
+      padding: 0 9px 80px 55px;
+      justify-content: space-between;
+
+      @include onLaptop {
+        padding: 0 9px 55px;
+      }
+
+      @include onTablet {
+        flex-direction: column;
+        padding: 0 0 64px;
+        gap: 32px;
+      }
+
+      &-sub {
+        display: flex;
+        flex-direction: column;
+        width: 304px;
+        margin-top: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        gap: 32px;
+        @include onTablet {
+          width: 100%;
+        }
+      }
+    }
+
+    &__title {
+      @include apply-font-styles($poppins-semibold);
+      font-size: 96px;
+      color: $primary-white;
+      line-height: 1;
+
+      &-part {
+        @include apply-font-styles($poppins-regular-italic);
+        color: $primary-bs-light-green;
+      }
+
+      @include onLaptop {
+        font-size: 48px;
+      }
+    }
+
+    &__description {
+      @include apply-font-styles($poppins-medium);
+      font-size: 16px;
+      color: $primary-green-200;
+      line-height: 1.5;
+      @include onLaptop {
+        font-size: 14px;
+      }
+    }
+
+    &__button {
+      @include button-constructor(
+        16px,
+        $primary-bs-light-green,
+        none,
+        $primary-bs-dark-green,
+        $primary-white,
+        $primary-bs-dark-green
+      );
+      @include apply-font-styles($poppins-medium);
+      width: 256px;
+      height: 54px;
+      @include onTablet {
+        width: 100%;
+      }
+    }
+
+    &__video {
+      position: relative;
+      @include onTablet {
+        margin: 0 -24px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      @include onTablet {
+        height: 256px;
+      }
+    }
+
+    &__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    &__logo {
+      line-height: 0;
+      @include onLaptop {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__vacancies-section {
+    padding: 74px 64px 156px;
+    @include onLaptop {
+      padding: 16px 24px 80px;
+    }
+    &__info {
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      @include onTablet {
+        padding-bottom: 0;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 100px;
+
+      &_right {
+        justify-content: end;
+        padding-top: 32px;
+      }
+
+      @include onLaptop {
+        gap: 24px;
+      }
+      @include onTablet {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &__title {
+      @include apply-font-styles($poppins-regular);
+      font-size: 56px;
+      color: $primary-white;
+      line-height: 1.1;
+      max-width: 976px;
+
+      &-part {
+        @include apply-font-styles($poppins-regular-italic);
+        color: $primary-bs-light-green;
+      }
+
+      @include onLaptop {
+        font-size: 32px;
+      }
+    }
+
+    &__btn-vacancies {
+      @include button-constructor(
+        14px,
+        transparent,
+        1px solid $primary-white,
+        $primary-white,
+        $primary-white,
+        $primary-bs-dark-green
+      );
+      @include apply-font-styles($poppins-regular);
+      width: 111px;
+      height: 33px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      @include onLaptop {
+        width: 100px;
+        height: 30px;
+      }
+    }
+
+    &__description {
+      width: 100%;
+      max-width: 872px;
+      @include apply-font-styles($poppins-regular);
+      font-size: 20px;
+      color: $primary-green-200;
+      line-height: 1.4;
+      text-indent: 112.35px;
+      text-transform: capitalize;
+      margin-right: -8px;
+      @include onLaptop {
+        font-size: 18px;
+      }
+      @include onTablet {
+        margin-right: 0;
+        text-indent: 0;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 64px;
+      gap: 32px;
+      @include onLaptop {
+        gap: 24px;
+      }
+      @include onTablet {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      background-color: #ccc;
+      height: 384px;
+      min-width: 312px;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-image {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        &_front {
+          z-index: 1;
+        }
+      }
+
+      &-cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba($primary-bs-medium-blue, 0.8);
+      }
+
+      &:nth-child(odd) {
+        padding: 32px 20px 32px 32px;
+      }
+
+      &:nth-child(even) {
+        padding: 32px 32px 32px 20px;
+      }
+
+      &:last-child {
+        padding: 32px;
+      }
+
+      @include onLaptop {
+        padding: 24px !important;
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        z-index: 2;
+
+        @include onLaptop {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+
+      &_last {
+        background-color: $primary-bs-light-green;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    &__profession {
+      @include apply-font-styles($poppins-medium);
+      font-size: 40px;
+      line-height: 1.1;
+      color: $primary-white;
+      @include onLaptop {
+        font-size: 24px;
+      }
+    }
+
+    &__tag {
+      @include button-constructor(
+        14px,
+        $primary-white,
+        none,
+        $primary-bs-svart,
+        $primary-bs-svart,
+        $primary-white
+      );
+      @include apply-font-styles($poppins-regular);
+      text-transform: uppercase;
+      padding: 6px 16.5px;
+      @include onLaptop {
+        font-size: 12px;
+      }
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+
+      &-text {
+        @include apply-font-styles($poppins-regular);
+        font-size: 14px;
+        color: $primary-white;
+      }
+    }
+
+    &__icon-arrow-right {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__logo {
+      width: 120px;
+      height: 20px;
+    }
+
+    &__panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-title {
+        @include apply-font-styles($poppins-medium);
+        font-size: 32px;
+        line-height: 1.1;
+        color: $primary-bs-dark-green;
+        padding-bottom: 16px;
+        @include onLaptop {
+          font-size: 20px;
+        }
+      }
+
+      &-description {
+        @include apply-font-styles($poppins-regular);
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba($primary-bs-dark-green, 0.6);
+        padding-bottom: 32px;
+        @include onLaptop {
+          font-size: 14px;
+        }
+      }
+
+      &-btn {
+        @include button-constructor(
+          16px,
+          transparent,
+          1px solid $primary-bs-dark-green,
+          $primary-bs-svart,
+          $primary-bs-dark-green,
+          $primary-bs-light-green
+        );
+        @include apply-font-styles($poppins-medium);
+        padding: 13.5px 80px;
+      }
+    }
+  }
+}
